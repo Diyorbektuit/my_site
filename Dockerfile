@@ -9,6 +9,10 @@ COPY ./requirements/base.txt /requirements/base.txt
 RUN pip install --upgrade pip
 RUN pip install -r /requirements/develop.txt
 
+EXPOSE 8000
 
 COPY . /app/
+COPY . .
 WORKDIR /app/
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
