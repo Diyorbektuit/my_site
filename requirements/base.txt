@@ -6,3 +6,5 @@ django-jazzmin
 drf-yasg
 djangorestframework
 django-filter
+django-ckeditor==6.1.0
+djangorestframework-simplejwt

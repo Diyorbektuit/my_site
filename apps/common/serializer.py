@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from .models import Post, User
+from rest_framework.exceptions import ValidationError
+
+from .models import Post
 
 class PostCreateSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,12 +18,3 @@ class PostListSerializer(serializers.ModelSerializer):
             'slug'
         )
 
-class UsersListSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = (
-            'id',
-            'username',
-            'role',
-            'password'
-        )
